@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||crichd.pk/assets/js/jquery.js",
+      "initiatorDomains": ["crichd.pk"],
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": ["zyyvyfkeydwgv.online", "acscdn.com", "aclib.net", "adcash.com"],
+      "initiatorDomains": ["crichd.pk", "playeraio.top", "bhalocast.pro"],
+      "resourceTypes": ["script", "sub_frame", "image", "xmlhttprequest", "ping", "other", "main_frame"]
+    }
+  }
+]

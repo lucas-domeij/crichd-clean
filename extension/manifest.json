@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "CricHD Clean",
+  "version": "0.1.0",
+  "minimum_chrome_version": "111",
+  "description": "Removes known ad links and suppresses popups on CricHD and its embedded player.",
+  "permissions": ["declarativeNetRequest"],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "ads", "enabled": true, "path": "rules.json" }]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.crichd.pk/*", "*://*.playeraio.top/*", "*://*.bhalocast.pro/*"],
+      "js": ["guard.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": ["*://*.crichd.pk/*", "*://*.playeraio.top/*", "*://*.bhalocast.pro/*"],
+      "js": ["clean.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ]
+}
